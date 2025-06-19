@@ -1,0 +1,11 @@
+import { Button } from "@/components/ui/button";
+import { UserButton } from "@clerk/nextjs";
+
+export default function Home() {
+  return (
+    <div>
+      <h1 className="text-2xl font-bold">Welcome to the dashboard</h1>
+      <UserButton />
+    </div>
+  );
+}
