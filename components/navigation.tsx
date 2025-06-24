@@ -2,7 +2,7 @@
 
 import { NavButton } from './ui/nav-button';
 import { usePathname, useRouter } from 'next/navigation';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { useState } from 'react';
 import { useMedia } from 'react-use';
 import { Button } from './ui/button';
@@ -46,6 +46,9 @@ export function Navigation() {
   if (isMobile) {
     return (
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
+        <SheetHeader>
+          <SheetTitle className="hidden">Menú</SheetTitle>
+        </SheetHeader>
         <SheetTrigger>
           <Button
             variant={'outline'}
@@ -55,6 +58,9 @@ export function Navigation() {
           </Button>
         </SheetTrigger>
         <SheetContent side="left" className="px-2">
+          <SheetDescription className="text-black hidden">
+            Selecciona una opción del menú
+          </SheetDescription>
           <nav className="flex flex-col gap-y-2 pt-12">
             {routes.map((route) => (
               <Button
